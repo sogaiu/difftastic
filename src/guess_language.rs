@@ -20,7 +20,7 @@ use std::{borrow::Borrow, ffi::OsStr, path::Path};
 pub enum Language {
     Bash,
     C,
-    Clojure,
+    ClojureSimple,
     CommonLisp,
     CPlusPlus,
     CSharp,
@@ -85,7 +85,7 @@ fn from_emacs_mode_header(src: &str) -> Option<Language> {
         };
         let lang = match mode_name.to_ascii_lowercase().trim().borrow() {
             "c" => Some(C),
-            "clojure" => Some(Clojure),
+            "clojure" => Some(ClojureSimple),
             "csharp" => Some(CSharp),
             "css" => Some(Css),
             "dart" => Some(Dart),
@@ -178,7 +178,7 @@ fn from_extension(extension: &OsStr, src: &str) -> Option<Language> {
         // extensions and parses.
         "cc" | "cpp" | "h" | "hh" | "hpp" | "cxx" => Some(CPlusPlus),
         "bb" | "boot" | "clj" | "cljc" | "clje" | "cljs" | "cljx" | "edn" | "joke" | "joker" => {
-            Some(Clojure)
+            Some(ClojureSimple)
         }
         "lisp" | "lsp" | "asd" => Some(CommonLisp),
         "cs" => Some(CSharp),

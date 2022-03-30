@@ -80,6 +80,11 @@ fn main() {
             extra_files: vec![],
         },
         TreeSitterParser {
+            name: "tree-sitter-clojure-simple",
+            src_dir: "vendor/tree-sitter-clojure-simple-src",
+            extra_files: vec![],
+        },
+        TreeSitterParser {
             name: "tree-sitter-commonlisp",
             src_dir: "vendor/tree-sitter-commonlisp-src",
             extra_files: vec![],
