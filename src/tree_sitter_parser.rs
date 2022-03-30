@@ -46,7 +46,7 @@ extern "C" {
     fn tree_sitter_bash() -> ts::Language;
     fn tree_sitter_c() -> ts::Language;
     fn tree_sitter_c_sharp() -> ts::Language;
-    fn tree_sitter_clojure() -> ts::Language;
+    fn tree_sitter_clojure_simple() -> ts::Language;
     fn tree_sitter_cpp() -> ts::Language;
     fn tree_sitter_commonlisp() -> ts::Language;
     fn tree_sitter_css() -> ts::Language;
@@ -138,8 +138,8 @@ pub fn from_language(language: guess::Language) -> TreeSitterConfig {
                 .unwrap(),
             }
         }
-        Clojure => {
-            let language = unsafe { tree_sitter_clojure() };
+        ClojureSimple => {
+            let language = unsafe { tree_sitter_clojure_simple() };
             TreeSitterConfig {
                 name: "Clojure",
                 language,
